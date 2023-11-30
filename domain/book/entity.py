@@ -11,7 +11,7 @@ class Book:
         description: str,
         genres: list,
         price: float,
-        quantity: int,
+        copies_available: int,
     ):
         self._isbn = isbn
         self._title = self._validate_title(title)
@@ -19,16 +19,31 @@ class Book:
         self._description = description
         self._genres = genres
         self._price = self._validate_price(price)
-        self._quantity = self._validate_quantity(quantity)
+        self._copies_available = self._validate_quantity(copies_available)
 
     def sell_copies(self, quantity: int):
-        if quantity > self.quantity:
+        if quantity > self._copies_available:
             raise QuantityGreaterThanCopiesAvailable
-        self._quantity -= quantity
+        self._copies_available -= quantity
 
-    @property
-    def quantity(self):
-        return self._quantity
+    def add_copies(self, quantity: int):
+        self._copies_available += quantity
+
+    def __eq__(self, other):
+        if not isinstance(other, Book):
+            return False
+        return self._isbn == other._isbn
+
+    def to_dict(self):
+        return {
+            "isbn": self._isbn.isbn,
+            "title": self._title,
+            "author": self._author,
+            "description": self._description,
+            "genres": self._genres,
+            "price": self._price,
+            "quantity": self._copies_available,
+        }
 
     def _validate_price(self, price: float):
         if price < 0:

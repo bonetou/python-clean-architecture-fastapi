@@ -1,3 +1,4 @@
+from domain.book.exceptions import QuantityGreaterThanCopiesAvailable
 from domain.book.value_objects.isbn import ISBN
 
 
@@ -19,6 +20,15 @@ class Book:
         self._genres = genres
         self._price = self._validate_price(price)
         self._quantity = self._validate_quantity(quantity)
+
+    def sell_copies(self, quantity: int):
+        if quantity > self.quantity:
+            raise QuantityGreaterThanCopiesAvailable
+        self._quantity -= quantity
+
+    @property
+    def quantity(self):
+        return self._quantity
 
     def _validate_price(self, price: float):
         if price < 0:

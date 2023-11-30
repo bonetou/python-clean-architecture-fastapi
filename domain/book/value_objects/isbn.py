@@ -1,9 +1,11 @@
-from typing import Self
+from dataclasses import dataclass
 
 
+@dataclass(frozen=True)
 class ISBN:
-    def __init__(self, isbn: str):
-        self._isbn = self._clean_isbn(isbn)
+    isbn: str
+
+    def __post_init__(self):
         if not self._is_valid():
             raise ValueError("Invalid ISBN")
 
@@ -11,17 +13,12 @@ class ISBN:
         return isbn.replace("-", "").replace(" ", "")
 
     def _is_valid(self):
-        if not self._isbn.isdigit():
+        clean_isbn = self._clean_isbn(self.isbn)
+
+        if not clean_isbn.isdigit():
             return False
 
-        if len(self._isbn) != 13:
+        if len(clean_isbn) != 13:
             return False
 
         return True
-
-    @property
-    def isbn_code(self):
-        return self._isbn
-
-    def __eq__(self, other: Self):
-        return self.isbn_code == other.isbn_code

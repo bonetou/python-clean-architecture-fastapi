@@ -1,14 +1,6 @@
-from tests.unit.domain.book.repository import BookRepository
+from tests.unit.use_cases.book.conftest import InMemoryBookRepository
 from use_cases.book.add.use_case import AddBookUseCase
 from use_cases.book.add.dtos import AddBookDTO
-
-
-class InMemoryBookRepository(BookRepository):
-    def __init__(self, books: list | None = None):
-        self.books = books or []
-
-    async def create(self, book):
-        self.books.append(book)
 
 
 async def test_it_should_create_a_book(lord_of_the_rings_book):

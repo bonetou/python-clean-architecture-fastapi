@@ -5,6 +5,10 @@ from dataclasses import dataclass
 class ISBN:
     isbn: str
 
+    @property
+    def formatted(self):
+        return self._clean_isbn(self.isbn)
+
     def __post_init__(self):
         if not self._is_valid():
             raise ValueError("Invalid ISBN")

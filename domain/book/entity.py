@@ -45,6 +45,34 @@ class Book:
             "quantity": self._copies_available,
         }
 
+    @property
+    def isbn(self):
+        return self._isbn
+
+    @property
+    def title(self):
+        return self._title
+
+    @property
+    def author(self):
+        return self._author
+
+    @property
+    def description(self):
+        return self._description
+
+    @property
+    def genres(self):
+        return self._genres
+
+    @property
+    def price(self):
+        return self._price
+
+    @property
+    def copies_available(self):
+        return self._copies_available
+
     def _validate_price(self, price: float):
         if price < 0:
             raise ValueError("Price must be greater than or equal to zero")

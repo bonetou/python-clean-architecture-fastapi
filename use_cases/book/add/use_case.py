@@ -1,6 +1,6 @@
 from domain.book.factory import BookFactory
 from tests.unit.domain.book.repository import BookRepository
-from use_cases.books.add.dtos import AddBookDTO
+from use_cases.book.add.dtos import AddBookDTO
 
 
 class AddBookUseCase:

@@ -1,6 +1,6 @@
 from tests.unit.domain.book.repository import BookRepository
-from use_cases.books.add.use_case import AddBookUseCase
-from use_cases.books.add.dtos import AddBookDTO
+from use_cases.book.add.use_case import AddBookUseCase
+from use_cases.book.add.dtos import AddBookDTO
 
 
 class InMemoryBookRepository(BookRepository):

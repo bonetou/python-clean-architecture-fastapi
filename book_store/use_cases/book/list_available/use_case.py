@@ -1,6 +1,6 @@
 from book_store.domain.book.entity import Book
 from tests.unit.domain.book.repository import BookRepository
-from use_cases.book.list_available.dtos import ListAvailableBooksDTO, BookDetailsDto
+from book_store.use_cases.book.list_available.dtos import ListAvailableBooksDTO, BookDetailsDto
 
 
 class ListAvailableBooksUseCase:

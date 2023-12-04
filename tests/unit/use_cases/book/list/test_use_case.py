@@ -1,6 +1,6 @@
 from tests.unit.use_cases.book.conftest import InMemoryBookRepository
-from use_cases.book.list_available.dtos import ListAvailableBooksDTO, BookDetailsDto
-from use_cases.book.list_available.use_case import ListAvailableBooksUseCase
+from book_store.use_cases.book.list_available.dtos import ListAvailableBooksDTO, BookDetailsDto
+from book_store.use_cases.book.list_available.use_case import ListAvailableBooksUseCase
 
 
 async def test_it_should_list_available_books(lord_of_the_rings_book):

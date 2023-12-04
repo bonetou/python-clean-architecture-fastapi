@@ -1,6 +1,6 @@
 from tests.unit.use_cases.book.conftest import InMemoryBookRepository
-from use_cases.book.add.use_case import AddBookUseCase
-from use_cases.book.add.dtos import AddBookDTO
+from book_store.use_cases.book.add.use_case import AddBookUseCase
+from book_store.use_cases.book.add.dtos import AddBookDTO
 
 
 async def test_it_should_create_a_book(lord_of_the_rings_book):

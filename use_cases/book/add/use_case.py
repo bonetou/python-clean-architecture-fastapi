@@ -1,4 +1,4 @@
-from domain.book.factory import BookFactory
+from book_store.domain.book.factory import BookFactory
 from tests.unit.domain.book.repository import BookRepository
 from use_cases.book.add.dtos import AddBookDTO
 

@@ -1,5 +1,5 @@
-from domain.book.exceptions import QuantityGreaterThanCopiesAvailable
-from domain.book.value_objects.isbn import ISBN
+from book_store.domain.book.exceptions import QuantityGreaterThanCopiesAvailable
+from book_store.domain.book.value_objects.isbn import ISBN
 
 
 class Book:

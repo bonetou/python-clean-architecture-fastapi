@@ -1,6 +1,6 @@
 import pytest
 
-from domain.book.value_objects.isbn import ISBN
+from book_store.domain.book.value_objects.isbn import ISBN
 
 
 def test_valid_isbn_code():

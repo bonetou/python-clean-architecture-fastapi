@@ -1,4 +1,4 @@
-from domain.book.factory import BookFactory
+from book_store.domain.book.factory import BookFactory
 
 
 def test_it_should_create_a_book(lord_of_the_rings_book):

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from domain.book.entity import Book
+from book_store.domain.book.entity import Book
 
 
 class BookRepository(ABC):

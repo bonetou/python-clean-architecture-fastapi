@@ -1,7 +1,7 @@
 import pytest
 
-from domain.book.entity import Book
-from domain.book.value_objects.isbn import ISBN
+from book_store.domain.book.entity import Book
+from book_store.domain.book.value_objects.isbn import ISBN
 
 
 @pytest.fixture

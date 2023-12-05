@@ -22,5 +22,8 @@ jobs:
           poetry config virtualenvs.create false
           poetry install
 
+      - name: Check tests coverage
+        run: make check-tests-coverage
+
       - name: Tests
-        run: poetry run pytest tests -vv
+        run: make run-tests

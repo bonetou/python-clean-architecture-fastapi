@@ -26,4 +26,4 @@ jobs:
         run: make check-tests-coverage
 
       - name: Tests
-        run: make run-tests
+        run: make run-all-tests

@@ -42,7 +42,7 @@ class Book:
             "description": self._description,
             "genres": self._genres,
             "price": self._price,
-            "quantity": self._copies_available,
+            "copies_available": self._copies_available,
         }
 
     @property

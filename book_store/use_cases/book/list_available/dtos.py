@@ -1,9 +1,8 @@
-from dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class BookDetailsDto:
-    isbn: int
+class BookDetailsDto(BaseModel):
+    isbn: str
     title: str
     author: str
     description: str
@@ -12,6 +11,5 @@ class BookDetailsDto:
     copies_available: int
 
 
-@dataclass
-class ListAvailableBooksDTO:
+class ListAvailableBooksDTO(BaseModel):
     books: list[BookDetailsDto]

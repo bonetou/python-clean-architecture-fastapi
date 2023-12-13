@@ -63,12 +63,12 @@ def test_it_should_raise_value_error_when_quantity_is_less_than_zero():
 
 def test_it_should_decrease_quantity_when_selling_book_copies(lord_of_the_rings_book):
     lord_of_the_rings_book.sell_copies(2)
-    assert lord_of_the_rings_book.to_dict()["quantity"] == 8
+    assert lord_of_the_rings_book.copies_available == 8
 
 
 def test_it_should_increase_quantity_when_adding_book_copies(lord_of_the_rings_book):
     lord_of_the_rings_book.add_copies(2)
-    assert lord_of_the_rings_book.to_dict()["quantity"] == 12
+    assert lord_of_the_rings_book.copies_available == 12
 
 
 def test_it_should_raise_value_error_when_selling_more_copies_than_available(lord_of_the_rings_book):

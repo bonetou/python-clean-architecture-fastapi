@@ -4,7 +4,7 @@ from fastapi import Depends
 
 from book_store.use_cases.book.add.use_case import AddBookUseCase
 from book_store.use_cases.book.list_available.use_case import ListAvailableBooksUseCase
-from tests.unit.domain.book.repository import BookRepository
+from book_store.domain.book.repository import BookRepository
 
 
 class InMemoryBookRepository(BookRepository):

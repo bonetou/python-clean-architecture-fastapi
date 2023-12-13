@@ -1,4 +1,4 @@
-from tests.unit.domain.book.repository import BookRepository
+from book_store.domain.book.repository import BookRepository
 
 
 class InMemoryBookRepository(BookRepository):

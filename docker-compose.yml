@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  api:
+    image: api
+    depends_on:
+      - db
+    env_file:
+      - .env
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+
+  db:
+    image: postgres:16-alpine
+    env_file:
+      - .env.db
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file:
+      - .env.db
+    depends_on:
+      - db

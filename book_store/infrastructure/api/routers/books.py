@@ -5,7 +5,7 @@ from pydantic import BaseModel, PositiveInt, NonNegativeFloat, AfterValidator
 from starlette import status
 
 from book_store.domain.book.value_objects.isbn import ISBN
-from book_store.infrastructure.dependencies import list_available_books_use_case, add_book_use_case
+from book_store.infrastructure.api.deps import list_available_books_use_case, add_book_use_case
 from book_store.use_cases.book.add.dtos import AddBookDTO
 from book_store.use_cases.book.add.use_case import AddBookUseCase
 from book_store.use_cases.book.list_available.use_case import ListAvailableBooksUseCase

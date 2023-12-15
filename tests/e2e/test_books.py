@@ -1,7 +1,7 @@
 import pytest
 from starlette import status
 
-from book_store.infrastructure.dependencies import in_memory_book_repository, InMemoryBookRepository
+from book_store.infrastructure.api.deps import in_memory_book_repository, InMemoryBookRepository
 
 
 @pytest.fixture
